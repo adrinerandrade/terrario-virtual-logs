@@ -1,0 +1,21 @@
+<div class="search-container">
+  <div class="event-container">
+    <label for="search-input"><b>Insira o código para acompanhar a execução:</b></label>
+  </div>
+  <div>
+    <input id="search-input" type="text" class="search-input margin-left-10" [(ngModel)]="executionId"/>
+    <button (click)="search()" class="search-button margin-left-20">Pesquisar</button>
+  </div>
+  <div>
+    <span *ngIf="reference && !isLoading && !events" class="margin-left-10">Código não encontrado!</span>
+  </div>
+  <div class="event-container auto-scroll-container">
+    <input type="checkbox" id="auto-scroll-input" [(ngModel)]="autoScroll"/>
+    <label for="auto-scroll-input" class="margin-left-10">Atualizar foco quando houver novos eventos.</label>
+  </div>
+</div>
+<ol>
+  <div *ngFor="let event of events">
+    <li><app-event-item [event]=event></app-event-item></li>
+  </div>
+</ol>

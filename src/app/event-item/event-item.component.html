@@ -1,0 +1,3 @@
+<app-planted-event *ngIf="eventTypeVerifier.isPlantedEvent(event)" [event]="event"></app-planted-event>
+<app-removed-event *ngIf="eventTypeVerifier.isRemovedEvent(event)" [event]="event"></app-removed-event>
+<app-died-event *ngIf="eventTypeVerifier.isDiedEvent(event)" [event]="event"></app-died-event>

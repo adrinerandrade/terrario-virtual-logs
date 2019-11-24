@@ -1,0 +1,18 @@
+<div class="event-item dead-info">
+  <div>
+    <span>Uma planta <b>{{ event.name }}</b> morreu!</span>
+  </div>
+  <div class="reason-container">
+    <span><i>Motivo da morte:</i></span>
+  </div>
+  <ul>
+    <li *ngIf="event.temperature > 0">A temperatura estava muito elevada para a planta.</li>
+    <li *ngIf="event.temperature < 0">A temperatura estava muito baixa para a planta.</li>
+    <li *ngIf="event.airHumidity > 0">A humidade do ar estava muito elevada para a planta.</li>
+    <li *ngIf="event.airHumidity < 0">A humidade do ar estava muito baixa para a planta.</li>
+    <li *ngIf="event.soilNutrients > 0">Excesso de nutrientes no solo.</li>
+    <li *ngIf="event.soilNutrients < 0">Falta de nutrientes no solo.</li>
+    <li *ngIf="event.soilHumidity > 0">Excesso de irrigação do solo.</li>
+    <li *ngIf="event.soilHumidity < 0">Falta de irrigição do solo.</li>
+  </ul>
+</div>
